@@ -1,0 +1,209 @@
+/* Basic Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* Header Section */
+  header {
+    background: #2c3e50;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  header h1 {
+    margin: 0;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  nav ul li {
+    margin-right: 15px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  nav ul li a:hover, 
+  nav ul li a.active {
+    text-decoration: underline;
+  }
+  
+  /* Hero Section */
+  #home {
+    padding: 20px;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .banner-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  #home h2 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+  }
+  
+  #home p {
+    color: #555;
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  
+  /* Footer */
+  footer {
+    background: #2c3e50;
+    color: #fff;
+    text-align: center;
+    padding: 10px 20px;
+    margin-top: auto;
+  }
+  
+  /* Pet Category Selection Section */
+#pet-category {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#pet-category h2 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+#pet-category p {
+  color: #555;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+/* Category Dropdown */
+.category-selection select {
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  transition: border-color 0.3s ease;
+}
+
+.category-selection select:hover {
+  border-color: #2c3e50;
+}
+
+/* Problems and Solutions Section */
+#problem-solution {
+  margin-top: 30px;
+  text-align: left;
+  max-width: 800px;
+  margin: 30px auto;
+}
+
+#problem-solution h3 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.problem-item {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.problem-item h4 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.problem-item p {
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Hidden class to toggle visibility */
+.hidden {
+  display: none;
+}
+
+/* Form Styling - Adjust colors to match your theme */
+form {
+  background-color: #f9f9f9;  /* Light background to highlight the form */
+  border: 1px solid #e0e0e0;   /* Border similar to your website theme */
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto;  /* Center the form */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
+}
+
+form label {
+  font-size: 1rem;
+  color: #333;  /* Text color aligned with your theme */
+  margin-bottom: 8px;
+  display: block;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;  /* Border color matching your inputs */
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  background-color: #fff;  /* Clean input background */
+  box-sizing: border-box;
+}
+
+form button {
+  background-color: #333;  /* Use your primary theme color */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #1a252f;  /* Darken the button on hover */
+}
+
+#responseMessage {
+  margin-top: 15px;
+  color: #28a745;  /* Success message color aligned with theme */
+  font-size: 1rem;
+}

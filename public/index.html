@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet Care Solutions</title>
+  <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <h1>Pet Care Solutions</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="care-tips.html">Care Tips</a></li>
+        <li><a href="health-solutions.html">Health Solutions</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="adoption.html">Adoption</a></li>
+        <li><a href="community.html">Community</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home">
+    <h2>Welcome to Pet Care Solutions</h2>
+    <img src="./images/Untitled design.png" alt="Pet Care Solutions Banner" class="banner-image">
+    <p>Your one-stop solution for pet care, health, and adoption.</p>
+  </section>
+
+  <section id="pet-category" class="content-section">
+    <h2>Select Your Pet Category</h2>
+    <p>Select a pet type below to view common problems and solutions for that category.</p>
+    
+    <!-- Pet Category Dropdown -->
+    <div class="category-selection">
+      <select id="petSelect" onchange="displayPetProblems()">
+        <option value="" disabled selected>Select a Pet</option>
+        <option value="dog">Dog</option>
+        <option value="cat">Cat</option>
+        <option value="bird">Bird</option>
+        <option value="rabbit">Rabbit</option>
+      </select>
+    </div>
+  
+    <!-- Display Problems and Solutions -->
+    <div id="problem-solution" class="hidden">
+      <h3>Common Problems and Solutions</h3>
+      <div id="problems-list">
+        <!-- Dynamic content will be inserted here -->
+      </div>
+    </div>
+  </section>
+
+  <form id="contactForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" required></textarea>
+
+    <button type="submit">Submit</button>
+</form>
+
+<div id="responseMessage"></div>
+
+  
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2024 Pet Care Solutions. All Rights Reserved.</p>
+  </footer>
+
+  <!-- JavaScript File -->
+  <script src="script.js"></script>
+  <script>
+    // Object to hold common problems and solutions for each pet type
+const petProblems = {
+  dog: [
+    { problem: "Excessive Barking", solution: "Provide training, daily exercise, and mental stimulation." },
+    { problem: "Shedding", solution: "Regular grooming and proper nutrition." }
+  ],
+  cat: [
+    { problem: "Scratching Furniture", solution: "Provide scratching posts and trim nails regularly." },
+    { problem: "Hairballs", solution: "Brush your cat frequently and feed hairball-reducing food." }
+  ],
+  bird: [
+    { problem: "Feather Plucking", solution: "Ensure a stimulating environment and provide a balanced diet." },
+    { problem: "Biting", solution: "Handle your bird regularly and establish trust." }
+  ],
+  rabbit: [
+    { problem: "Overgrown Teeth", solution: "Provide chew toys and fibrous hay to wear down teeth." },
+    { problem: "Digestive Issues", solution: "Ensure a diet rich in fiber and limit sugary treats." }
+  ]
+};
+
+// Function to display the problems and solutions
+function displayPetProblems() {
+  const petSelect = document.getElementById("petSelect").value;
+  const problemsList = document.getElementById("problems-list");
+  const problemSolutionDiv = document.getElementById("problem-solution");
+
+  // Clear previous content
+  problemsList.innerHTML = "";
+
+  if (petSelect) {
+    // Show the problems and solutions section
+    problemSolutionDiv.classList.remove("hidden");
+
+    // Generate and display problems and solutions for the selected pet
+    petProblems[petSelect].forEach(item => {
+      const problemElement = document.createElement("div");
+      problemElement.classList.add("problem-item");
+      problemElement.innerHTML = `<h4>${item.problem}</h4><p>${item.solution}</p>`;
+      problemsList.appendChild(problemElement);
+    });
+  }
+}
+  </script>
+</body>
+</html>
